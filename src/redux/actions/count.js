@@ -1,4 +1,4 @@
-import {DECREMENT, INCREMENT} from "./constants";
+import {DECREMENT, INCREMENT} from "../constants";
 
 // sync action
 export const increment = data => ({type: INCREMENT, data});

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {increment, decrement, incrementAsync} from "../../redux/count_action";
+import {increment, decrement, incrementAsync} from "../../redux/actions/count";
 
 class Count extends Component {
     increment = () => {
@@ -23,9 +23,11 @@ class Count extends Component {
     }
 
     render() {
+        const {sum, persons} = this.props;
         return (
             <div>
-                <h2>{this.props.sum}</h2>
+                <h2>This is Count Component.</h2>
+                <h2>sum is {sum}, person list is {persons.length}</h2>
                 <select ref={dom => this.selectDom = dom}>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -45,7 +47,7 @@ class Count extends Component {
 
 export default connect(
     // state
-    (sum) => ({sum}),
+    (state) => ({...state}),
     // methods
     {increment, decrement, incrementAsync}
 )(Count);

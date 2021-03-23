@@ -1,4 +1,4 @@
-import {INCREMENT, DECREMENT} from './constants'
+import {INCREMENT, DECREMENT} from '../constants'
 
 const INIT_STATE = 0;
 export default function countReducer(preState = INIT_STATE, action) {
